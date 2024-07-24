@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timer Page</title>
+    <style>
+        .timer {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="pauseAll">Pause All</button>
+    <button id="playAll">Play All</button>
+    <div class="timer">
+        <h2>Timer 1</h2>
+        <div id="timer1">200:00</div>
+        <button class="increase5">+5</button>
+        <button class="decrease5">-5</button>
+        <button class="increase1">+1</button>
+        <button class="decrease1">-1</button>
+        <button class="pause">Pause</button>
+        <button class="play">Play</button>
+    </div>
+    <div class="timer">
+        <h2>Timer 2</h2>
+        <div id="timer2">200:00</div>
+        <button class="increase5">+5</button>
+        <button class="decrease5">-5</button>
+        <button class="increase1">+1</button>
+        <button class="decrease1">-1</button>
+        <button class="pause">Pause</button>
+        <button class="play">Play</button>
+    </div>
+    <div class="timer">
+        <h2>Timer 3</h2>
+        <div id="timer2">200:00</div>
+        <button class="increase5">+5</button>
+        <button class="decrease5">-5</button>
+        <button class="increase1">+1</button>
+        <button class="decrease1">-1</button>
+        <button class="pause">Pause</button>
+        <button class="play">Play</button>
+    </div>
+    <!-- Repeat the above code for the remaining 9 timers -->
+    
+    <script>
+        // Add JavaScript code here to handle timer functionality
+
+        // Get all the timer elements
+        const timers = document.querySelectorAll('.timer');
+
+        // Function to update the timer display
+        function updateTimer(timerElement, time) {
+            clearInterval(timerIntervals.get(timerElement));
+            timerElement.textContent = time;
+            startTimer(timerElement);
+        }
+
+        // Declare the interval variable outside of the startTimer function
+        const timerIntervals = new Map();
+
+        // Function to start the timer
+        function startTimer(timerElement) {
+            
+            clearInterval(timerIntervals.get(timerElement));
+
+            // Get the initial time from the timer element
+            let time = timerElement.textContent;
+
+            // Split the time into minutes and seconds
+            let [minutes, seconds] = time.split(':').map(Number);
+
+            // Convert the time to seconds
+            let totalSeconds = minutes * 60 + seconds;
+
+            // Create an interval to update the timer every second
+            interval = setInterval(() => {
+                // Decrease the total seconds by 1
+                totalSeconds--;
+
+                // Calculate the new minutes and seconds
+                minutes = Math.floor(totalSeconds / 60);
+                seconds = totalSeconds % 60;
+
+                // Format the time with leading zeros
+                let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update the timer display
+                updateTimer(timerElement, formattedTime);
+
+                // Check if the timer has reached 0
+                if (totalSeconds === 0) {
+                    // Stop the timer
+                    clearInterval(interval);
+                }
+            }, 1000);
+
+            timerIntervals.set(timerElement, interval);
+        }
+
+        // Function to pause the timer
+        function pauseTimer(timerElement) {
+            // Get the current time from the timer element
+            let time = timerElement.textContent;
+
+            interval = timerIntervals.get(timerElement);
+
+            // Stop the timer by clearing the interval
+            clearInterval(interval);
+
+            // Update the timer display
+            updateTimer(timerElement, time);
+        }
+
+        // Function to play the timer
+        function playTimer(timerElement) {
+            // Start the timer
+            startTimer(timerElement);
+        }
+
+        // Add event listeners to the timer buttons
+        timers.forEach(timer => {
+            const increase5Button = timer.querySelector('.increase5');
+            const decrease5Button = timer.querySelector('.decrease5');
+            const increase1Button = timer.querySelector('.increase1');
+            const decrease1Button = timer.querySelector('.decrease1');
+            const pauseButton = timer.querySelector('.pause');
+            const playButton = timer.querySelector('.play');
+
+            increase5Button.addEventListener('click', () => {
+                // Increase the timer by 5 minutes
+                // Get the current time from the timer element
+                let time = timer.querySelector('.timer > div').textContent;
+
+                // Split the time into minutes and seconds
+                let [minutes, seconds] = time.split(':').map(Number);
+
+                // Increase the minutes by 5
+                minutes += 5;
+
+                // Format the time with leading zeros
+                let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update the timer display
+                updateTimer(timer.querySelector('.timer > div'), formattedTime);
+            });
+
+            decrease5Button.addEventListener('click', () => {
+                // Decrease the timer by 5 minutes
+                // Get the current time from the timer element
+                let time = timer.querySelector('.timer > div').textContent;
+
+                // Split the time into minutes and seconds
+                let [minutes, seconds] = time.split(':').map(Number);
+
+                // Decrease the minutes by 5
+                minutes -= 5;
+
+                // Make sure the minutes don't go below 0
+                if (minutes < 0) {
+                    minutes = 0;
+                }
+
+                // Format the time with leading zeros
+                let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update the timer display
+                updateTimer(timer.querySelector('.timer > div'), formattedTime);
+            });
+
+            increase1Button.addEventListener('click', () => {
+                // Increase the timer by 1 minute
+                // Get the current time from the timer element
+                let time = timer.querySelector('.timer > div').textContent;
+
+                // Split the time into minutes and seconds
+                let [minutes, seconds] = time.split(':').map(Number);
+
+                // Increase the minutes by 1
+                minutes++;
+
+                // Format the time with leading zeros
+                let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update the timer display
+                updateTimer(timer.querySelector('.timer > div'), formattedTime);
+            });
+
+            decrease1Button.addEventListener('click', () => {
+                // Decrease the timer by 1 minute
+                // Get the current time from the timer element
+                let time = timer.querySelector('.timer > div').textContent;
+
+                // Split the time into minutes and seconds
+                let [minutes, seconds] = time.split(':').map(Number);
+
+                // Decrease the minutes by 1
+                minutes--;
+
+                // Make sure the minutes don't go below 0
+                if (minutes < 0) {
+                    minutes = 0;
+                }
+
+                // Format the time with leading zeros
+                let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // Update the timer display
+                updateTimer(timer.querySelector('.timer > div'), formattedTime);
+            });
+
+            pauseButton.addEventListener('click', () => {
+                // Pause the timer
+                pauseTimer(timer.querySelector('.timer > div'));
+            });
+
+            playButton.addEventListener('click', () => {
+                // Play the timer
+                playTimer(timer.querySelector('.timer > div'));
+            });
+        });
+
+        // Add event listeners to the pauseAll and playAll buttons
+        const pauseAllButton = document.getElementById('pauseAll');
+        const playAllButton = document.getElementById('playAll');
+
+        pauseAllButton.addEventListener('click', () => {
+            // Pause all timers
+            // timers.forEach(timer => {
+            //     pauseTimer(timer.querySelector('.timer > div'));
+            // });
+
+            var t = document.getElementsByClassName("timer");
+            for (var i = 0; i < t.length; i++) {
+                pauseTimer(t[i].querySelector('.timer > div'));
+            }
+        });
+
+        playAllButton.addEventListener('click', () => {
+            // Play all timers
+            //timers.forEach(timer => {
+            //    playTimer(timer.querySelector('.timer > div'));
+            //});
+
+            var t = document.getElementsByClassName("timer");
+            for (var i = 0; i < t.length; i++) {
+                playTimer(t[i].querySelector('.timer > div'));
+            }
+        });
+    </script>
+</body>
+</html>

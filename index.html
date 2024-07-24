@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Timers</title>
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <h1>Multiple Timers</h1>
+
+    <button onclick="startAllTimers()">Play All</button>
+    <button onclick="stopAllTimers()">Stop All</button>
+
+    <div class="timer">
+        <label>Timer 1:</label>
+        <span id="timer1">200:00</span>
+        <button onclick="increaseMinutes(this, 5)">+5</button>
+        <button onclick="decreaseMinutes(this, 5)">-5</button>
+        <button onclick="increaseMinutes(this, 1)">+1</button>
+        <button onclick="decreaseMinutes(this, 1)">-1</button>
+        <button onclick="startTimer(this)">Play</button>
+        <button onclick="stopTimer(this)">Stop</button>
+    </div>
+    <div class="timer">
+        <label>Timer 2:</label>
+        <span id="timer2">200:00</span>
+        <button onclick="increaseMinutes(this, 5)">+5</button>
+        <button onclick="decreaseMinutes(this, 5)">-5</button>
+        <button onclick="increaseMinutes(this, 1)">+1</button>
+        <button onclick="decreaseMinutes(this, 1)">-1</button>
+        <button onclick="startTimer(this)">Play</button>
+        <button onclick="stopTimer(this)">Stop</button>
+    </div>
+    <div class="timer">
+        <label>Timer 3:</label>
+        <span id="timer3">200:00</span>
+        <button onclick="increaseMinutes(this, 5)">+5</button>
+        <button onclick="decreaseMinutes(this, 5)">-5</button>
+        <button onclick="increaseMinutes(this, 1)">+1</button>
+        <button onclick="decreaseMinutes(this, 1)">-1</button>
+        <button onclick="startTimer(this)">Play</button>
+        <button onclick="stopTimer(this)">Stop</button>
+    </div>
+
+
+    <script>
+        var timers = [];
+
+        function startTimer(e) {
+            var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+            clearInterval(timers[timerId]);
+            timers[timerId] = setInterval(function() {
+                var timerElement = document.getElementById('timer' + timerId);
+                var time = timerElement.innerHTML.split(':');
+                var minutes = parseInt(time[0]);
+                var seconds = parseInt(time[1]);
+
+                if (minutes === 0 && seconds === 0) {
+                    clearInterval(timers[timerId]);
+                    return;
+                }
+
+                if (seconds === 0) {
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+
+                timerElement.innerHTML = padZero(minutes) + ':' + padZero(seconds);
+            }, 1000);
+        }
+
+        function stopTimer(e) {
+            var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+            clearInterval(timers[timerId]);
+        }
+
+        function increaseMinutes(e, minutes) {
+            var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+            var timerElement = document.getElementById('timer' + timerId);
+            var time = timerElement.innerHTML.split(':');
+            var currentMinutes = parseInt(time[0]);
+            var currentSeconds = parseInt(time[1]);
+
+            var newMinutes = currentMinutes + minutes;
+            timerElement.innerHTML = padZero(newMinutes) + ':' + padZero(currentSeconds);
+        }
+
+        function decreaseMinutes(e, minutes) {
+            var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+            var timerElement = document.getElementById('timer' + timerId);
+            var time = timerElement.innerHTML.split(':');
+            var currentMinutes = parseInt(time[0]);
+            var currentSeconds = parseInt(time[1]);
+
+            var newMinutes = currentMinutes - minutes;
+            if (newMinutes < 0) {
+                newMinutes = 0;
+            }
+            timerElement.innerHTML = padZero(newMinutes) + ':' + padZero(currentSeconds);
+        }
+
+        function startAllTimers() {
+            for (var i = 1; i <= 11; i++) {
+                var timerId = document.getElementById('timer' + i);
+                startTimer(timerId);
+            }
+        }
+
+        function stopAllTimers() {
+            for (var i = 1; i <= 11; i++) {
+                var timerId = document.getElementById('timer' + i);
+                stopTimer(timerId);
+            }
+        }
+
+        function padZero(number) {
+            return number.toString().padStart(2, '0');
+        }
+    </script>
+</body>
+</html>

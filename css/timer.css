@@ -1,0 +1,11 @@
+.timer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.timer label {
+    margin-right: 10px;
+}
+.timer button {
+    margin-right: 5px;
+}

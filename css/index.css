@@ -1,0 +1,13 @@
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) {
+    html {
+        width: 768px;
+        height: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    html {
+        width: 1920px;
+        height: 1080px;
+    }
+}

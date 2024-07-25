@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/CreamMeatball/MultipleTimer/issues"
   },
-  "homepage": "https://github.com/CreamMeatball/MultipleTimer#readme"
+  "homepage": "https://github.com/CreamMeatball/MultipleTimer#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

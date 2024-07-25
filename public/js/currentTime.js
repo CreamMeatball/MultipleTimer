@@ -1,7 +1,7 @@
 window.onload = function clock() {
     // Get the current time
     const currentTime = new Date();
-    console.log(currentTime);
+    // console.log(currentTime);
 
     // Format the time as desired (e.g., HH:MM:SS)
     const formattedTime = currentTime.toLocaleTimeString();

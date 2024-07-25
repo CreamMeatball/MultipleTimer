@@ -32,6 +32,10 @@ function addTimer() {
 
     // Append the new timer div to the timer container
     timerContainer.appendChild(timerDiv);
+
+    var currentTheme = document.getElementById('current-theme').innerText;
+    var theme = currentTheme.split(': ')[1]; // 'theme : white' 또는 'theme : black'에서 테마 이름을 가져옵니다.
+    changeTheme(theme);
 }
 
 function deleteTimer() {

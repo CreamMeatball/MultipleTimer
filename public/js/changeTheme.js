@@ -1,5 +1,6 @@
 function changeTheme(theme) {
     var body = document.body;
+    var currentTheme = document.getElementById('current-theme');
 
     if (theme === 'white') {
         body.style.backgroundColor = 'white';
@@ -13,6 +14,8 @@ function changeTheme(theme) {
         var titleName = document.getElementById('title-name');
         titleName.style.background = 'white';
         titleName.style.color = 'black';
+
+        currentTheme.innerHTML = 'Theme: white';
     } else if (theme === 'black') {
         body.style.backgroundColor = 'black';
         body.style.color = 'white';
@@ -25,5 +28,7 @@ function changeTheme(theme) {
         var titleName = document.getElementById('title-name');
         titleName.style.background = 'black';
         titleName.style.color = 'white';
+
+        currentTheme.innerHTML = 'Theme: black';
     }
 }

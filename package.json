@@ -1,0 +1,22 @@
+{
+  "name": "deathtimer",
+  "version": "1.0.0",
+  "description": "multiple timer for using club content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreamMeatball/MultipleTimer.git"
+  },
+  "keywords": [
+    "timer"
+  ],
+  "author": "CreamMeatball",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CreamMeatball/MultipleTimer/issues"
+  },
+  "homepage": "https://github.com/CreamMeatball/MultipleTimer#readme"
+}

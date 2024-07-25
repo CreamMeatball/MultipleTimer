@@ -14,7 +14,7 @@ function addTimer() {
     // Add the HTML for the timer
     timerDiv.innerHTML = `
         <input type="text" placeholder="Timer  ` + addTimerIndex + `" style="width: 200px"></input>
-        <span id="timer` + addTimerIndex + `">200:00</span>
+        <span id="timer` + addTimerIndex + `">00:30</span>
         <div class="timer-buttons">
         <button onclick="increaseMinutes(this, 5)">+5</button>
         <button onclick="decreaseMinutes(this, 5)">-5</button>

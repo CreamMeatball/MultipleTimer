@@ -11,6 +11,12 @@ function startTimer(e) {
 
         if (minutes === 0 && seconds === 0) {
             clearInterval(timers[timerId]);
+
+            // Change the timer color to red
+            timerElement.parentElement.style.backgroundColor = 'red';
+            timerElement.parentElement.style.color = 'white';
+            timerElement.parentElement.querySelector('input').style.backgroundColor = 'red';
+            timerElement.parentElement.querySelector('input').style.color = 'white';
             return;
         }
 
@@ -23,6 +29,18 @@ function startTimer(e) {
 
         timerElement.innerHTML = padZero(minutes) + ':' + padZero(seconds);
     }, 1000);
+
+    // Change the timer color to theme color
+    var currentTheme = document.getElementById('current-theme').innerText;
+    var theme = currentTheme.split(': ')[1]; // 'theme : white' 또는 'theme : black'에서 테마 이름을 가져옵니다.
+    var oppositeTheme = theme === 'white' ? 'black' : 'white';
+
+    var timerElement = document.getElementById('timer' + timerId);
+
+    timerElement.parentElement.style.backgroundColor = theme;
+    timerElement.parentElement.style.color = oppositeTheme;
+    timerElement.parentElement.querySelector('input').style.backgroundColor = theme;
+    timerElement.parentElement.querySelector('input').style.color = oppositeTheme;
 }
 
 function stopTimer(e) {

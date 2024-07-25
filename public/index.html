@@ -19,36 +19,11 @@
     <button onclick="startAllTimers()">Play All</button>
     <button onclick="stopAllTimers()">Stop All</button>
 
-    <div class="timer">
-        <label>Timer 1:</label>
-        <span id="timer1">200:00</span>
-        <button onclick="increaseMinutes(this, 5)">+5</button>
-        <button onclick="decreaseMinutes(this, 5)">-5</button>
-        <button onclick="increaseMinutes(this, 1)">+1</button>
-        <button onclick="decreaseMinutes(this, 1)">-1</button>
-        <button onclick="startTimer(this)">Play</button>
-        <button onclick="stopTimer(this)">Stop</button>
-    </div>
-    <div class="timer">
-        <label>Timer 2:</label>
-        <span id="timer2">200:00</span>
-        <button onclick="increaseMinutes(this, 5)">+5</button>
-        <button onclick="decreaseMinutes(this, 5)">-5</button>
-        <button onclick="increaseMinutes(this, 1)">+1</button>
-        <button onclick="decreaseMinutes(this, 1)">-1</button>
-        <button onclick="startTimer(this)">Play</button>
-        <button onclick="stopTimer(this)">Stop</button>
-    </div>
-    <div class="timer">
-        <label>Timer 3:</label>
-        <span id="timer3">200:00</span>
-        <button onclick="increaseMinutes(this, 5)">+5</button>
-        <button onclick="decreaseMinutes(this, 5)">-5</button>
-        <button onclick="increaseMinutes(this, 1)">+1</button>
-        <button onclick="decreaseMinutes(this, 1)">-1</button>
-        <button onclick="startTimer(this)">Play</button>
-        <button onclick="stopTimer(this)">Stop</button>
-    </div>
     <button id="add-timer" onclick="addTimer()">Add Timer</button>
+    <button id="delete-timer" onclick="deleteTimer()">Delete Timer</button>
+
+    <div id="timer-container">
+
+    </div>
 </body>
 </html>

@@ -1,8 +1,12 @@
+var addTimerIndex;
 
-var addTimerIndex = 4;
+window.onload = function() {
+    addTimerIndex = document.getElementById('timer-container').childElementCount + 1;
+};
 
 // Define the addTimer function
 function addTimer() {
+    console.log(addTimerIndex);
     // Create a new timer div
     const timerDiv = document.createElement('div');
     timerDiv.className = 'timer';
@@ -21,6 +25,19 @@ function addTimer() {
 
     addTimerIndex++;
 
-    // Append the new timer div to the body
-    document.body.appendChild(timerDiv);
+    // Get the timer container
+    const timerContainer = document.getElementById('timer-container');
+
+    // Append the new timer div to the timer container
+    timerContainer.appendChild(timerDiv);
+}
+
+function deleteTimer() {
+    const timerContainer = document.getElementById('timer-container');
+    const lastTimer = timerContainer.lastChild;
+    if (lastTimer) {
+        timerContainer.removeChild(lastTimer);
+        addTimerIndex--;
+    }
+    console.log(addTimerIndex);
 }

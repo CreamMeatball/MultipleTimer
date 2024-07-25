@@ -14,8 +14,8 @@
 }
 
 .timer {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    /* background-color: #fff; */
+    border: 1px solid black;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
@@ -37,6 +37,7 @@
     padding: 5px;
     width: 100%;
     border: none;
+    text-align: center;
 }
 
 .timer input::placeholder {

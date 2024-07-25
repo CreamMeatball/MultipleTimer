@@ -4,23 +4,52 @@
     justify-content: center;
 }
 
+#timer-container {
+    margin: 0 auto;
+    width : 1900px;
+}
+
+#timer-container > div {
+    margin: 10px;
+}
+
 .timer {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
-    width: calc(50% - 40px); /* Subtract the total left and right padding */
+    /* width: calc(50% - 40px) */
+    width : 400px;
     margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timer label {
     font-weight: bold;
 }
 
+.timer input {
+    font-size: 1.5em;
+    padding: 5px;
+    width: 100%;
+    border: none;
+}
+
+.timer input::placeholder {
+    text-align: center;
+}
+
 .timer span {
     font-size: 2em;
     margin-left: 10px;
+}
+
+.timer > * {
+    margin: 10px;
 }
 
 button {

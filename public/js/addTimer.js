@@ -13,14 +13,16 @@ function addTimer() {
 
     // Add the HTML for the timer
     timerDiv.innerHTML = `
-        <label>Timer ` + addTimerIndex + `:</label>
+        <input type="text" placeholder="Timer  ` + addTimerIndex + `" style="width: 200px"></input>
         <span id="timer` + addTimerIndex + `">200:00</span>
+        <div class="timer-buttons">
         <button onclick="increaseMinutes(this, 5)">+5</button>
         <button onclick="decreaseMinutes(this, 5)">-5</button>
         <button onclick="increaseMinutes(this, 1)">+1</button>
         <button onclick="decreaseMinutes(this, 1)">-1</button>
-        <button onclick="startTimer(this)">Play</button>
-        <button onclick="stopTimer(this)">Stop</button>
+        <button id="timer` + addTimerIndex + `startbutton" onclick="startTimer(this)">Play</button>
+        <button id="timer` + addTimerIndex + `stopbutton" onclick="stopTimer(this)">Stop</button>
+        </div>
     `;
 
     addTimerIndex++;

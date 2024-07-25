@@ -1,7 +1,7 @@
 var timers = [];
 
 function startTimer(e) {
-    var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+    var timerId = e.parentElement.parentElement.querySelector('span').id.replace('timer', '');
     clearInterval(timers[timerId]);
     timers[timerId] = setInterval(function() {
         var timerElement = document.getElementById('timer' + timerId);
@@ -26,12 +26,12 @@ function startTimer(e) {
 }
 
 function stopTimer(e) {
-    var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+    var timerId = e.parentElement.parentElement.querySelector('span').id.replace('timer', '');
     clearInterval(timers[timerId]);
 }
 
 function increaseMinutes(e, minutes) {
-    var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+    var timerId = e.parentElement.parentElement.querySelector('span').id.replace('timer', '');
     var timerElement = document.getElementById('timer' + timerId);
     var time = timerElement.innerHTML.split(':');
     var currentMinutes = parseInt(time[0]);
@@ -42,7 +42,7 @@ function increaseMinutes(e, minutes) {
 }
 
 function decreaseMinutes(e, minutes) {
-    var timerId = e.parentElement.querySelector('span').id.replace('timer', '');
+    var timerId = e.parentElement.parentElement.querySelector('span').id.replace('timer', '');
     var timerElement = document.getElementById('timer' + timerId);
     var time = timerElement.innerHTML.split(':');
     var currentMinutes = parseInt(time[0]);
@@ -56,16 +56,25 @@ function decreaseMinutes(e, minutes) {
 }
 
 function startAllTimers() {
-    for (var i = 1; i <= 11; i++) {
-        var timerId = document.getElementById('timer' + i);
-        startTimer(timerId);
+    var timerContainer = document.getElementById('timer-container');
+    var timers = timerContainer.querySelectorAll('.timer');
+    var numberOfTimers = timers.length;
+    console.log(numberOfTimers);
+    for (var i = 1; i <= numberOfTimers; i++) {
+        // var timerId = document.getElementById('timer' + i);
+        var startButton = document.getElementById('timer' + i + 'startbutton');
+        startTimer(startButton);
     }
 }
 
 function stopAllTimers() {
-    for (var i = 1; i <= 11; i++) {
-        var timerId = document.getElementById('timer' + i);
-        stopTimer(timerId);
+    var timerContainer = document.getElementById('timer-container');
+    var timers = timerContainer.querySelectorAll('.timer');
+    var numberOfTimers = timers.length;
+    for (var i = 1; i <= numberOfTimers; i++) {
+        // var timerId = document.getElementById('timer' + i);
+        var stopButton = document.getElementById('timer' + i + 'stopbutton');
+        stopTimer(stopButton);
     }
 }
 

@@ -1,7 +1,6 @@
-window.onload = function clock() {
+function clock() {
     // Get the current time
     const currentTime = new Date();
-    // console.log(currentTime);
 
     // Format the time as desired (e.g., HH:MM:SS)
     const formattedTime = currentTime.toLocaleTimeString();
@@ -15,3 +14,5 @@ window.onload = function clock() {
     // Call the clock function again after 1 second
     setTimeout(clock, 1000);
 }
+
+window.onload = clock;

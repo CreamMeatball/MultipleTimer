@@ -15,4 +15,4 @@ function clock() {
     setTimeout(clock, 1000);
 }
 
-window.onload = clock;
+window.addEventListener("load", clock);

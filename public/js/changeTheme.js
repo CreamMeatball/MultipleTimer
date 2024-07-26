@@ -5,6 +5,10 @@ function changeTheme(theme) {
     if (theme === 'white') {
         body.style.backgroundColor = 'white';
         body.style.color = 'black';
+
+        var timerContainer = document.getElementById('timer-container');
+        timerContainer.style.borderColor = 'black';
+
         var timer = document.getElementsByClassName('timer');
         for (var i = 0; i < timer.length; i++) {
             timer[i].style.backgroundColor = 'white';
@@ -25,6 +29,10 @@ function changeTheme(theme) {
     } else if (theme === 'black') {
         body.style.backgroundColor = 'black';
         body.style.color = 'white';
+
+        var timerContainer = document.getElementById('timer-container');
+        timerContainer.style.borderColor = 'white';
+
         var timer = document.getElementsByClassName('timer');
         for (var i = 0; i < timer.length; i++) {
             timer[i].style.backgroundColor = 'black';

@@ -16,6 +16,10 @@ function changeTheme(theme) {
         var titleName = document.getElementById('title-name');
         titleName.style.background = 'white';
         titleName.style.color = 'black';
+        
+        var initialTime = document.getElementById('initial-time');
+        initialTime.style.backgroundColor = 'white';
+        initialTime.style.color = 'black';
 
         currentTheme.innerHTML = 'Theme: white';
     } else if (theme === 'black') {
@@ -32,6 +36,10 @@ function changeTheme(theme) {
         var titleName = document.getElementById('title-name');
         titleName.style.background = 'black';
         titleName.style.color = 'white';
+
+        var initialTime = document.getElementById('initial-time');
+        initialTime.style.backgroundColor = 'black';
+        initialTime.style.color = 'white';
 
         currentTheme.innerHTML = 'Theme: black';
     }

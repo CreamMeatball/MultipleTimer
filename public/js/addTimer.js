@@ -47,6 +47,7 @@ function deleteTimer() {
     const timerContainer = document.getElementById('timer-container');
     const lastTimer = timerContainer.lastChild;
     if (lastTimer) {
+        stopTimer(lastTimer.querySelector('button'));
         timerContainer.removeChild(lastTimer);
         addTimerIndex--;
     }

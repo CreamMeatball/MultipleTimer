@@ -11,10 +11,15 @@ function addTimer() {
     const timerDiv = document.createElement('div');
     timerDiv.className = 'timer';
 
+    // Get the initial time input element
+    const initialTime = document.getElementById('initial-time');
+    // Get the initial time input value
+    const initialTimeValue = initialTime.value;
+
     // Add the HTML for the timer
     timerDiv.innerHTML = `
         <input type="text" placeholder="Timer  ` + addTimerIndex + `" style="width: 200px"></input>
-        <span id="timer` + addTimerIndex + `">00:30</span>
+        <span id="timer` + addTimerIndex + `">` + initialTimeValue + `</span>
         <div class="timer-buttons">
         <button onclick="increaseMinutes(this, 5)">+5</button>
         <button onclick="decreaseMinutes(this, 5)">-5</button>

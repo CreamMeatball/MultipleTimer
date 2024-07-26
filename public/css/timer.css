@@ -6,7 +6,8 @@
 
 #timer-container {
     margin: 0 auto;
-    width : 1900px;
+    width : 90vw;
+    border: 1px solid black;
 }
 
 #timer-container > div {
@@ -20,7 +21,7 @@
     margin-bottom: 20px;
     padding: 20px;
     /* width: calc(50% - 40px) */
-    width : 400px;
+    width : 300px;
     margin: 10px;
 
     display: flex;

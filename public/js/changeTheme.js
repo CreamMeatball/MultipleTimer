@@ -13,7 +13,7 @@ function changeTheme(theme) {
         for (var i = 0; i < timer.length; i++) {
             timer[i].style.backgroundColor = 'white';
             timer[i].style.color = 'black';
-            timer[i].style.borderColor = 'black';
+            // timer[i].style.borderColor = 'black';
             timer[i].querySelector('input').style.backgroundColor = 'white';
             timer[i].querySelector('input').style.color = 'black';
         }
@@ -37,7 +37,7 @@ function changeTheme(theme) {
         for (var i = 0; i < timer.length; i++) {
             timer[i].style.backgroundColor = 'black';
             timer[i].style.color = 'white';
-            timer[i].style.borderColor = 'white';
+            // timer[i].style.borderColor = 'white';
             timer[i].querySelector('input').style.backgroundColor = 'black';
             timer[i].querySelector('input').style.color = 'white';
         }

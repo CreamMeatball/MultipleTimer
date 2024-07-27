@@ -2,8 +2,13 @@
 <html>
 <head>
     <title>Timers</title>
+
     <link rel="stylesheet" href="css/timer.css">
     <link rel="stylesheet" href="css/index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/531fc61e03.js" crossorigin="anonymous"></script>
+
     <script src="js/main.js"></script>
     <script src="js/currentTime.js"></script>
     <script src="js/addTimer.js"></script>
@@ -12,24 +17,27 @@
     <script src="js/index.js"></script>
 </head>
 <body>
-    <h1>Timers</h1>
-    <button id="save-button">Save</button>
-    <button id="load-button">Load</button>
+    <h1>TIMERS</h1>
+    <button id="save-button"><i class="fa-solid fa-file-arrow-down"></i>&nbsp; Save</button>
+    <button id="load-button"><i class="fa-solid fa-file-arrow-up"></i>&nbsp; Load</button>
     <input type="text" id="title-name" placeholder="Title Name" style="text-align: center; font-size: 20px; border: none;">
 
     <div id="current-time-container">
         <label></label>
+        &nbsp; <i class="fa-solid fa-clock"></i>&nbsp; 
         <span id="current-time">TIME</span>
     </div>
 
-    <button onclick="startAllTimers()">Play All</button>
-    <button onclick="stopAllTimers()">Stop All</button>
+    <button onclick="startAllTimers()"><i class="fa-solid fa-play"></i>&nbsp; Play All</button>
+    <button onclick="stopAllTimers()"><i class="fa-solid fa-stop"></i>&nbsp; Stop All</button>
 
-    <input type="text" id="time-setting" placeholder="00:30" value="00:30" style="text-align: center; font-size: 15px; border: none;">
+    &nbsp;<i class="fa-solid fa-hourglass-end"></i>&nbsp;
+    <input type="text" id="time-setting" placeholder="00:30" value="00:30" style="text-align: center; font-size: 15px; border: none; width: 70px;">
 
-    <button id="add-timer" onclick="addTimer()">Add Timer</button>
-    <button id="delete-timer" onclick="deleteTimer()">Delete Timer</button>
+    <button id="add-timer" onclick="addTimer()"><i class="fa-solid fa-plus"></i>&nbsp; Add Timer</button>
+    <button id="delete-timer" onclick="deleteTimer()"><i class="fa-solid fa-minus"></i>&nbsp; Delete Timer</button>
 
+    &nbsp;<i class="fa-solid fa-palette"></i>&nbsp;
     <span id="current-theme">Theme: white</span>
     <button id="white-theme" onclick="changeTheme('white')">White Theme</button>
     <button id="black-theme" onclick="changeTheme('black')">Black Theme</button>

@@ -24,12 +24,12 @@ function addTimer(timerIndex, timerName, initialTimeValue) {
             <input type="text" placeholder="Timer  ` + addTimerIndex + `" value="" style="width: 200px"></input>
             <span id="timer` + addTimerIndex + `">` + timeSettingValue + `</span>
             <div class="timer-buttons">
-            <button onclick="increaseMinutes(this, 5)">+5</button>
-            <button onclick="decreaseMinutes(this, 5)">-5</button>
-            <button onclick="increaseMinutes(this, 1)">+1</button>
-            <button onclick="decreaseMinutes(this, 1)">-1</button>
-            <button id="timer` + addTimerIndex + `startbutton" onclick="startTimer(this)">Play</button>
-            <button id="timer` + addTimerIndex + `stopbutton" onclick="stopTimer(this)">Stop</button>
+            <button onclick="increaseMinutes(this, 5)" tabindex="-1">+5</button>
+            <button onclick="decreaseMinutes(this, 5)" tabindex="-1">-5</button>
+            <button onclick="increaseMinutes(this, 1)" tabindex="-1">+1</button>
+            <button onclick="decreaseMinutes(this, 1)" tabindex="-1">-1</button>
+            <button id="timer` + addTimerIndex + `startbutton" onclick="startTimer(this)" tabindex="-1">Play</button>
+            <button id="timer` + addTimerIndex + `stopbutton" onclick="stopTimer(this)" tabindex="-1">Stop</button>
             </div>
         `;
 
@@ -49,12 +49,12 @@ function addTimer(timerIndex, timerName, initialTimeValue) {
             <input type="text" placeholder="Timer  ` + timerIndex + `" value="` + timerName + `" style="width: 200px"></input>
             <span id="timer` + timerIndex + `">` + initialTimeValue + `</span>
             <div class="timer-buttons">
-            <button onclick="increaseMinutes(this, 5)">+5</button>
-            <button onclick="decreaseMinutes(this, 5)">-5</button>
-            <button onclick="increaseMinutes(this, 1)">+1</button>
-            <button onclick="decreaseMinutes(this, 1)">-1</button>
-            <button id="timer` + timerIndex + `startbutton" onclick="startTimer(this)">Play</button>
-            <button id="timer` + timerIndex + `stopbutton" onclick="stopTimer(this)">Stop</button>
+            <button onclick="increaseMinutes(this, 5)" tabindex="-1">+5</button>
+            <button onclick="decreaseMinutes(this, 5)" tabindex="-1">-5</button>
+            <button onclick="increaseMinutes(this, 1)" tabindex="-1">+1</button>
+            <button onclick="decreaseMinutes(this, 1)" tabindex="-1">-1</button>
+            <button id="timer` + timerIndex + `startbutton" onclick="startTimer(this)" tabindex="-1">Play</button>
+            <button id="timer` + timerIndex + `stopbutton" onclick="stopTimer(this)" tabindex="-1">Stop</button>
             </div>
         `;
         addTimerIndex = timerIndex + 1;

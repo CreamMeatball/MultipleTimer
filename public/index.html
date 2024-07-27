@@ -8,20 +8,23 @@
     <script src="js/currentTime.js"></script>
     <script src="js/addTimer.js"></script>
     <script src="js/changeTheme.js"></script>
+    <script src="js/saveload.js"></script>
 </head>
 <body>
     <h1>Timers</h1>
+    <button id="save-button">Save</button>
+    <button id="load-button">Load</button>
     <input type="text" id="title-name" placeholder="Title Name" style="text-align: center; font-size: 20px; border: none;">
 
     <div id="current-time-container">
-        <label>Current Time :</label>
+        <label></label>
         <span id="current-time">TIME</span>
     </div>
 
     <button onclick="startAllTimers()">Play All</button>
     <button onclick="stopAllTimers()">Stop All</button>
 
-    <input type="text" id="initial-time" placeholder="00:30" value="00:30" style="text-align: center; font-size: 15px; border: none;">
+    <input type="text" id="time-setting" placeholder="00:30" value="00:30" style="text-align: center; font-size: 15px; border: none;">
 
     <button id="add-timer" onclick="addTimer()">Add Timer</button>
     <button id="delete-timer" onclick="deleteTimer()">Delete Timer</button>

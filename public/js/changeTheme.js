@@ -21,9 +21,9 @@ function changeTheme(theme) {
         titleName.style.background = 'white';
         titleName.style.color = 'black';
         
-        var initialTime = document.getElementById('initial-time');
-        initialTime.style.backgroundColor = 'white';
-        initialTime.style.color = 'black';
+        var timeSetting = document.getElementById('time-setting');
+        timeSetting.style.backgroundColor = 'white';
+        timeSetting.style.color = 'black';
 
         currentTheme.innerHTML = 'Theme: white';
     } else if (theme === 'black') {
@@ -45,9 +45,9 @@ function changeTheme(theme) {
         titleName.style.background = 'black';
         titleName.style.color = 'white';
 
-        var initialTime = document.getElementById('initial-time');
-        initialTime.style.backgroundColor = 'black';
-        initialTime.style.color = 'white';
+        var timeSetting = document.getElementById('time-setting');
+        timeSetting.style.backgroundColor = 'black';
+        timeSetting.style.color = 'white';
 
         currentTheme.innerHTML = 'Theme: black';
     }

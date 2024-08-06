@@ -4,6 +4,7 @@ You can use Multiple timers at once, in one screen.
 
 After adding as many timers as you want, you can run timer individually or together.
 
+![screen](./example/screen.png)
 
 ## Feature
 
@@ -43,6 +44,8 @@ After adding as many timers as you want, you can run timer individually or toget
    git clone https://github.com/CreamMeatball/MultipleTimer.git
 
 2. Install requirements
+
+   Command "npm install"
 
 3. Run server
 

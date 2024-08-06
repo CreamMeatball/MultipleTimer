@@ -6,6 +6,8 @@ After adding as many timers as you want, you can run timer individually or toget
 
 ![screen](./example/screen.png)
 
+![screen_2](./example/screen_2.png)
+
 ## Feature
 
 1. **Add Timer / Delete Timer**
